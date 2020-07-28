@@ -1,0 +1,341 @@
+body {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	background: none;
+	background-color: rgb(241, 241, 241);
+	transition: all 500ms ease;
+}
+
+body.dark-mode a {
+	color: #7afff5;
+}
+
+body.dark-mode a:hover {
+	color: #46b7af;
+}
+
+.sized {
+	max-height: 125px;
+	max-width: 100%;
+}
+
+.inputStyle {
+	outline: none;
+	border: 1px solid black;
+	border-radius: 3px;
+	height: 50px;
+	text-indent: 3px;
+	font-size: 12pt;
+	font-weight: bolder;
+}
+
+.btnStyle {
+	outline: none;
+	height: 35px;
+	width: 36px;
+	border-radius: 3px;
+	float: right;
+	border: none;
+	background-color: #EBF0F1;
+}
+
+.btnStyle:hover {
+	background-color: #444444;
+	color: white;
+	-webkit-transition: all 165ms ease-in-out;
+	-moz-transition: all 165ms ease-in-out;
+	-ms-transition: all 165ms ease-in-out;
+	-o-transition: all 165ms ease-in-out;
+	transition: all 165ms ease-in-out;
+}
+
+.gray {
+	background-color: #EBF0F1;
+}
+
+.cz-shorten-input {
+	margin-top: 20px;
+	height: 50px;
+	font-size: 20pt;
+}
+
+.cz-shorten-btn {
+	margin-top: 20px;
+	height: 50px;
+	transition: all 250ms ease;
+	outline: none;
+}
+
+.has-error .cz-shorten-btn {
+	border-radius: 0 8px 8px 0 !important;
+	background-color: #b1b1b1;
+	border-color: red;
+	cursor: not-allowed;
+}
+
+.newsize {
+	font-size: 18pt;
+}
+
+.font {
+	font-size: 5em;
+	color: #444;
+	text-align: center;
+	font-family: 'Fjalla One','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-display: fallback;
+}
+
+.colored {
+	background: linear-gradient(-125deg,#ff4e09 0%, #ffa019 100%);
+	border-radius: 5px;
+	padding-bottom: 25px;
+}
+
+.size {
+	width: auto;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+}
+
+i {
+	margin-left: 10px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.fb:hover {
+	color: #3b5998;
+}
+
+.twit:hover {
+	color: #00aced;
+}
+
+.gplus:hover {
+	color: #dd4b39;
+}
+
+.pin:hover {
+	color: #cb2027;
+}
+
+.anim {
+	-webkit-transition: all 100ms ease-in-out;
+	-moz-transition: all 100ms ease-in-out;
+	-ms-transition: all 100ms ease-in-out;
+	-o-transition: all 100ms ease-in-out;
+	transition: all 100ms ease-in-out;
+}
+
+hr {
+	border-top-color: #ffffff;
+}
+
+.shadow {
+	-webkit-box-shadow: 0px 0px 2px 1px rgba(255, 255, 255, 0.48);
+	-moz-box-shadow: 0px 0px 2px 1px rgba(255, 255, 255, 0.48);
+	box-shadow: 0px 0px 2px 1px rgba(255, 255, 255, 0.48);
+}
+
+.row-flex,
+.row-flex>div[class*='col-'] {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	flex: 1 1 auto;
+}
+
+.row-flex-wrap {
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	align-content: flex-start;
+	flex: 0;
+}
+
+.row-flex>div[class*='col-'],
+.container-flex>div[class*='col-'] {
+	margin: -.2px;
+	/* hack adjust for wrapping */
+}
+
+.container-flex>div[class*='col-'] div,
+.row-flex>div[class*='col-'] div {
+	width: 100%;
+}
+
+
+.flex-col {
+	display: flex;
+	display: -webkit-flex;
+	flex: 1 100%;
+	flex-flow: column nowrap;
+}
+
+.flex-grow {
+	display: flex;
+	-webkit-flex: 2;
+	flex: 2;
+}
+
+.rounded {
+	border-radius: 5px;
+	margin-top: 10px;
+}
+
+.Url-field:hover {
+	cursor: text;
+}
+
+.statics {
+	background-color: #FFCA28;
+	border-radius: 4px;
+	box-shadow: 0 4px 8px -3px rgba(0, 0, 0, 0.7);
+}
+
+.statics-tabs {
+	margin-bottom: 9px;
+}
+
+.statics-tabs a {
+	color: white;
+	transition: all 250ms ease;
+	background: linear-gradient(125deg,#ff4e09 0%, #ffa019 100%);
+}
+
+.statics-tabs a:hover,
+.statics-tabs a:focus {
+	color: #444;
+}
+
+.navbar {
+	transition: all 500ms ease;
+}
+
+.panel {
+	border-radius: 8px;
+
+	overflow: hidden;
+	transition: all 500ms ease;
+}
+
+.input-group input,
+.input-group span,
+.input-group button {
+	border-radius: 5px;
+
+
+}
+
+
+
+#dark-mode-btn:hover,
+#dark-mode-btn.active {
+	color: white;
+	background-color: #333;
+}
+
+#dark-mode-btn:focus {
+	border-color: lightseagreen;
+	box-shadow: 0 0 5px lightseagreen
+}
+
+.panel-body {
+	color: #ff630e;
+}
+
+.input-group-addon,
+.form-control,
+.well,
+.well legend,
+.panel-body,
+.modal-content,
+.logo-text .font {
+	transition: all 500ms ease;
+}
+
+.modal-content {
+	box-shadow: 0 4px 15px -5px rgba(0, 0, 0, .5);
+}
+
+body.dark-mode {
+	background-color: #222;
+	color: #eee;
+}
+body.dark-mode .logo-text .font {
+	color:#eee;
+}
+body.dark-mode .navbar {
+	background-color: #040404;
+}
+
+body.dark-mode .panel {
+	border-color: #666;
+}
+
+body.dark-mode .panel-body {
+	background-color: #444;
+	color: #eee;
+}
+
+body.dark-mode .form-control {
+	background-color: #444;
+	color: #eee;
+	border-color: #666;
+}
+
+body.dark-mode .form-control.has-success {
+	border-color: #7aec7a;
+}
+
+body.dark-mode .input-group-addon {
+	background-color: #666;
+	border-color: #666;
+	color: #eee;
+}
+
+body.dark-mode .modal-content {
+	background-color: #444;
+	color: white;
+}
+
+body.dark-mode .well {
+	background-color: #333;
+	border-color: #666;
+}
+
+body.dark-mode .well legend {
+	color: white;
+}
+
+body.dark-mode .has-error .help-block {
+	color: rgb(255, 29, 29);
+}
+
+body.dark-mode .statics {
+	background-color: #555;
+}
+
+body.dark-mode .statics * {
+	border-color: #666;
+}
+
+body.dark-mode .table-bordered {
+	border-color: #666;
+}
+
+body.dark-mode .table-hover>tbody>tr:hover>td,
+body.dark-mode .table-hover>tbody>tr:hover>th {
+	background-color: initial;
+}
+
+body.dark-mode .table-striped>tbody>tr:nth-child(odd)>td,
+body.dark-mode .table-striped>tbody>tr:nth-child(odd)>th {
+	background-color: #444;
+}
+body.dark-mode .colored {
+	background-color: #444;
+}
