@@ -1,0 +1,63 @@
+安装前请提前设置好伪静态
+
+安装
+环境要求：PHP、Mysql、Nginx/Apache
+
+伪静态设置
+Apache，编辑.htaccess文件，将本地地址修改成自己的域名，比如：
+
+RewriteEngine on
+RewriteRule ^about about.php [L]
+RewriteRule ^api-about api-about.php [L]
+RewriteRule ^contact contact.php [L]
+RewriteRule ^tos tos.php [L]
+RewriteRule ^([^/.]+)/?$ link.php?id=$1 [L]
+RewriteRule ^404 404.php [L]
+
+Options -Indexes
+ErrorDocument 404 http://xxx/404
+ErrorDocument 403 http://xxx/404
+
+Nginx，点击域名设置-伪静态，然后将下面例子的域名改成自己的，再复制进去，例子：
+rewrite ^/about /about.php last;
+rewrite ^/api-about /api-about.php last;
+rewrite ^/contact /contact.php last;
+rewrite ^/tos /tos.php last;
+rewrite ^/([^/.]+)/?$ /link.php?id=$1 last;
+rewrite ^/404 /404.php last;
+error_page 404 http://xxx/404;
+error_page 403 http://xxx/404;
+
+然后开始安装，由于伪静态问题，只能通过具体路径安装，链接如下：
+#安装路径，记得修改下面域名地址
+https://xxx/install/index.html
+
+安装完成后，默认用户名和密码均为admin。
+
+注意：非常重要！！！！
+
+安装好后登录管理面板>设置>常规>修改成你的域名>保存>前台即可正常显示（否则前台错位乱码）这一步非常重要，安装好后必须先设置自己的域名。
+
+后台路径：https://xxx/admin/index.php
+
+如果是带S的安装后到后台也要改成带S的要不然前台乱码。
+
+安装好后你可以自己找其他的二维码API也可以使用小编自己搭建的二维码API接口
+https://sssn.top/qr/api.php?text=xxx&size=250
+text：要生成二维码的文本内容（必须）
+size：生成二维码大小，单位像素
+示例：https://sssn.top/qr/api.php?text=要生成的地址&size=250
+
+修改二维码接口文件目录为：
+
+第一处：
+
+functions/created   修改71行接口地址，如果想要改变二维码大小只要修改size=数值即可
+
+71：<img src=”https://sssn.top/qr/api.php?text=<?php echo $created_link; ?>&size=200″>
+
+第二处：
+
+根目录/stats 修改87行接口地址，如果想要改变二维码大小只要修改size=数值即可
+
+87:<div class=”col-lg-12″><img alt=”二维码” src=”https://sssn.top/qr/api.php?text=<?php echo $created_link; ?>&size=200″ class=”size center-block”/></div>
