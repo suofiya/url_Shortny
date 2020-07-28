@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shortny - Install</title>
+    <link href="https://fonts.loli.net/css?family=Fira+Sans:300,400,500,700" rel="stylesheet">
+    <style>
+    a {
+        text-decoration: none;
+    }
+    body {
+        margin:0;
+        padding: 0;
+        font-family: "Fira Sans" !important;
+        background-color: #eee;
+    }
+    h1 {
+        padding: 0;
+        margin: 0;
+    }
+    .container {
+        background-color: #fff;
+        z-index: 1;
+        width: 500px;
+        max-width: 100%;
+        margin: 25px 12.5% 0;
+        padding: 24px;
+        border-left: 4px solid darkcyan;
+        box-shadow: 0 5px 30px -7px rgba(0,0,0,0.3);
+        transition: all 250ms ease;
+    }
+    #selection {
+        padding: 2em 0 2em;
+        text-align: center
+    }
+    #selection a {
+        padding: 0.5em 1.5em 0.5em;
+        margin: 0 1em 0.5em;
+        font-size: 20px;
+        border-radius: 0.5em;
+        outline: none;
+        transition: all 250ms ease;
+        background-color: darkcyan;
+        color:white;
+        opacity: 0.4;
+        cursor: pointer;
+    }
+    #selection a.active, #selection a:hover,#selection a:focus {
+        opacity: 1;
+    }
+    #selection a.upgrade {
+        background-color: #f57f17;
+    }
+    main {
+        transition: all 500ms ease-out;
+        height: auto;
+        max-height: 500px;
+        box-sizing: border-box;
+    }
+    form {
+        display:inline;
+    }
+    input[type=text],input[type=password] {
+        border: 1px solid #ccc;
+        padding: 0.5em;
+        margin-bottom: 0.5em;
+        font-size: 16px;
+        border-radius: 0.5em;
+        outline: none;
+        transition: all 250ms ease;
+    }
+    input[type=text]:focus,input[type=password]:focus {
+        border-color: lightseagreen;
+        box-shadow: 0 2px 7px -3px rgba(0,0,0,0.7);
+    }
+    input.error {
+        border-color: rgb(196, 0, 0);
+        color: rgb(196, 0, 0);
+    }
+    input.success {
+        border-color: rgb(66, 177, 14);
+    }
+    button {
+        border: 2px solid #ccc;
+        padding: 0.5em;
+        margin-bottom: 0.5em;
+        font-size: 16px;
+        border-radius: 0.5em;
+        outline: none;
+        transition: all 250ms ease;
+        background-color: rgb(10, 13, 34);
+        color:white;
+        opacity: 0.8;
+        cursor: pointer;
+    }
+    button:hover, button:focus {
+        opacity: 1;
+        box-shadow: 0 2px 7px -3px rgba(0,0,0,0.7);
+        border-color: darkcyan;
+    }
+    footer {
+        display: flex;
+        vertical-align: middle;
+        align-items: flex-end;
+        align-content: space-around;
+        flex-direction: row;
+        padding: 0 2em 0;
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    footer ul {
+        list-style: none;
+        width: 100%;
+        padding: 0;
+    }
+    footer ul li {
+        padding: 10px 0 0;
+    }
+    footer ul a {
+        text-decoration: none;
+        color: darkcyan;
+    }
+    footer ul a:hover, footer ul a:focus {
+        text-decoration: underline;
+    } 
+    footer p {
+        width: 100%;
+        text-align: right;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h1>Shortny 安装</h1>
+        </div>
+        <main>
+            <div id="selection">
+                <a class="install" onclick="setOption(0,this)">安装</a> OR
+                <a class="upgrade" onclick="setOption(1,this)">升级</a>
+            </div>
+            <form autocomplete="off" action="javascript:submitForm(this)">
+                <p id="install-notice" style="transition:all 250ms ease;overflow: hidden;height: 0;margin: 0 0 1em"></p>
+                <div><input disabled required name="" placeholder="数据库主机地址" type="text"></div>
+                <div><input disabled required name="" placeholder="用户名" type="text"></div>
+                <div><input disabled name="" placeholder="密码" type="password"></div>
+                <div><input disabled required name="" placeholder="数据库名称" type="text"></div>
+                <div><button>提交</button><span></span></div>
+            </form>
+        </main>
+    </div>
+    <footer>
+        <ul>
+            <li><a target="_blank" href="https://masuc.cn">更多免费源码</a></li>
+        </ul>
+        <p>&COPY; 2013-2018 Condize, All rights reserved.</p>
+    </footer>
+    <script>
+        let option = null;
+        const form = (document.forms[0]);
+        function setOption(o,w) {
+            option = o;
+            let btns = document.querySelectorAll("#selection a");
+            let notice = document.getElementById("install-notice");
+            [].slice.apply(btns).map(x=>x.classList.remove("active"));
+            w.classList.add("active");
+            [].slice.apply(form).map(x=>x.disabled=false);
+            if (option) {
+                notice.innerText = "确保输入现有数据库的名称。"
+            } else {
+                notice.innerText = "请创建一个空数据库以及用户名和密码，以使此脚本正常工作。"
+            }
+            notice.style.height = "auto";
+        }
+        function submitForm() {
+            let body = {
+                req:"poop",
+                dbhost: form[0].value,
+                dbuser: form[1].value,
+                dbpass: form[2].value,
+                dbname: form[3].value,
+                option: option
+            };
+            let headers = new Headers();
+            headers.append("content-type","application/x-www-form-urlencoded");
+            console.log(JSON.stringify(body));
+            fetch("i.php",{
+                method: "POST",
+                headers: headers,
+                body: JSON.stringify(body)
+            }).then(async function poop(x){
+                switch (await x.json()) {
+                    case 2002:
+                        alert("主机名无效。");
+                        break;
+                    case 1045:
+                        alert("无效的用户名或密码。");
+                        break;
+                    case 1049:
+                        alert("数据库名称无效。");
+                        break;
+                    default:
+                        success(option);
+                        break;
+                }
+            });
+        }
+        function success(o) {
+            const container = document.querySelector(".container");
+            const main = container.querySelector("main");
+            main.style.opacity = 0;
+            main.style.maxHeight = 0;
+            let html;
+            if (o) {
+                html = `<h3>成功升级</h3>
+                            <p>您现在可以删除安装文件夹！</p>
+                                出于安全原因，管理面板的用户名和密码已重置为默认 <strong>(admin,admin)</strong> , <strong>请务必更新。</strong><br><br>
+                                #请随时联系我们的五星级支持 :)<br>
+                                #感谢您选择Condize :) <3<br></p>
+                            <p><a href="../admin/settings.php">单击此处进入管理面板</a></p>`;
+            } else {
+                html = `<h3>安装成功！</h3>
+                            <p>现在可以删除安装文件夹！</p>
+                            <p>从 <pre>http://{YourWebSiteURL}/admin/index.php</pre> 访问管理面板</p>
+                            <p>默认管理员用户名和密码为“admin”。</p>
+                            <p>检查您的管理面板，并确保您将URL更改为您的网站URL。</p>
+                            <p>#不要忘记阅读文档<br>
+
+                                #请随时联系我们的五星级支持 :)<br>
+
+                                #感谢您选择Condize :) <3<br></p>
+                            <p><a href="../admin/settings.php">单击此处进入管理面板</a></p>`;
+            }
+
+            setTimeout(()=>{
+                main.innerHTML = html;
+                main.style.opacity = 1;
+                console.log(main.offsetHeight);
+                requestAnimationFrame(()=>{
+                    main.style.maxHeight = 500 + "px";
+                })
+            },600)
+            
+        }
+    </script>
+</body>
+
+</html>
