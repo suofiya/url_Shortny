@@ -71,6 +71,7 @@ https://xxx/install/index.html
 
 
 
-您的支持是我最大的动力，欢迎打赏！
+您的支持是我最大的动力，欢迎打赏！ 请使用微信打赏哟！！！
 
 <a href="http://img.atusu.cn/image/JKfu"><img src="http://img.atusu.cn/images/2020/08/01/QQ20200801121207.md.png" alt="QQ20200801121207.png" border="0" /></a>
+
