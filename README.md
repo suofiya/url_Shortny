@@ -19,7 +19,10 @@
 
 链接统计
 
-QQ内自动跳转至浏览器（默认不带需要本功能需在 https://sssn.top/WoEsz 下载）
+QQ内自动跳转至浏览器,微信跳转至浏览器（默认不带需要本功能需在 https://sssn.top/WoEsz 下载）
+
+2020/08/01更新，已支持QQ微信同时跳转，本程序不放出，需到上方链接获取，如不会搭建的可联系为您搭建
+
 
 小书签
 
@@ -57,4 +60,5 @@ https://xxx/install/index.html
 
 后台路径：https://xxx/admin/index.php
 
-
+扫码关注微信：
+<a href="http://img.atusu.cn/image/JXae"><img src="http://img.atusu.cn/images/2020/08/01/mmqrcode1595591197140.jpg" alt="mmqrcode1595591197140.jpg" border="0" /></a>
