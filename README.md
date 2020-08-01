@@ -61,4 +61,5 @@ https://xxx/install/index.html
 后台路径：https://xxx/admin/index.php
 
 扫码关注微信：
-<a href="http://img.atusu.cn/image/JXae"><img src="http://img.atusu.cn/images/2020/08/01/mmqrcode1595591197140.jpg" alt="mmqrcode1595591197140.jpg" border="0" /></a>
+
+<img src="http://img.atusu.cn/images/2020/08/01/mmqrcode1595591197140.jpg" alt="mmqrcode1595591197140.jpg" border="0" />
