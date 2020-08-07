@@ -84,9 +84,6 @@
                                 <a style="color: #2296f3;"href="<?php echo $info['URL'] . '/stats.php?id=' . $rand1; ?>"> <h3>   <?php echo $info['URL'] . '/stats.php?id=' . $rand1; ?></h3></a>
                                 
                                 <h4 style="margin-bottom: 20px; color: #707070;font-size: 24px;color: #ff0000;margin-top:28px;"> 严禁生成违法链接！一经发现直接删除！并举报违规链接！ </h4>
-                                <?php 
-                        include "sczip.php";
-                    ?>
 
                             </div>
                         </div>
